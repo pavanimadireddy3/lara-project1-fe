@@ -31,6 +31,7 @@ export class SignupComponent {
   get username() {
     return this.person.get('username');
   }
+  // my code
   checkStrongPassword(): boolean {
     var password = this.person.value.password;
     if(password.search(/[a-z]/) == -1) {
