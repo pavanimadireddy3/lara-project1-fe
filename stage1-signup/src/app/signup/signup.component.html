@@ -33,7 +33,15 @@
     <span *ngIf="password?.touched && password?.errors?.['required']">
         Password is required
     </span>
-    <span *ngIf="password?.touched && checkStrongPassword">
+    <span *ngIf="password?.touched && password?.valid && checkStrongPassword">
+        {{strongCheckMessage}}
+    </span>
+    <br>
+    Confirm Password : <input type = "password" formControlName = "confirmPassword"/>
+    <span *ngIf="confirmPassword?.touched && confirmPassword?.errors?.['required']">
+        Password is required
+    </span>
+    <span *ngIf="confirmPassword?.touched && confirmPassword?.valid && checkStrongConfirmPassword">
         {{strongCheckMessage}}
     </span>
     <br>
