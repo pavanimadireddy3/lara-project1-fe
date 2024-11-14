@@ -1,0 +1,42 @@
+<form [formGroup] = "person"(ngSubmit)="save()">
+    First Name : <input type = "text" formControlName = "firstName"/>
+    <span *ngIf="firstName?.touched && firstName?.errors?.['required']">
+        First Name is required
+    </span>
+    <span *ngIf="firstName?.touched && firstName?.errors?.['minlength']">
+        First Name must be atleast 3 characters long
+    </span>
+    <span *ngIf="firstName?.touched && firstName?.errors?.['maxlength']">
+        First Name canot be morethan 25 characters long
+    </span>
+    <br>
+    Last Name : <input type = "text" formControlName = "lastName"/>
+    <span *ngIf="lastName?.touched && lastName?.errors?.['required']">
+        Last Name is required
+    </span>
+    <span *ngIf="lastName?.touched && lastName?.errors?.['minlength']">
+        Last Name must be atleast 2 characters long
+    </span>
+    <span *ngIf="lastName?.touched && lastName?.errors?.['maxlength']">
+        Last Name cannot ne more than 15 characters
+    </span>
+    <br>
+     username : <input type = "text" formControlName = "username"/>
+     <span *ngIf="username?.touched && username?.errors?.['required']">
+        User Name must be a valid email
+    </span>
+    <span *ngIf="username?.touched && username?.errors?.['email']">
+        First Name is required
+    </span>
+    <br>
+    Password : <input type = "password" formControlName = "password"/>
+    <span *ngIf="password?.touched && password?.errors?.['required']">
+        Password is required
+    </span>
+    <span *ngIf="password?.touched && checkStrongPassword">
+        {{strongCheckMessage}}
+    </span>
+    <br>
+    <input type="submit" value="Submit"/>
+</form>
+
