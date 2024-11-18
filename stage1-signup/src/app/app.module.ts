@@ -3,22 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignupComponent } from './signup/signup.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { provideHttpClient } from '@angular/common/http';
+import { AppAdminModule } from './app-admin/app-admin.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SignupComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    AppAdminModule
   ],
-  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
