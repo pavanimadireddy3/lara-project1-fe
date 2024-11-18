@@ -88,10 +88,11 @@ export class SignupComponent {
       return;
     }
     this.person.removeControl('confirmPassword');
-   this.service.save(this.person).subscribe(
-    r1 => {
-      alert("user registered successfully" + r1);
-    }
-   );
+    console.log(this.person.value);
+  //  this.service.save(this.person).subscribe(
+  //   r1 => {
+  //     alert("user registered successfully" + r1);
+  //   }
+  //  );
   }
 }
