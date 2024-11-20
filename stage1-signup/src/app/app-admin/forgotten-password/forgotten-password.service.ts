@@ -9,6 +9,6 @@ export class ForgottenPasswordService {
 
   constructor(private client: HttpClient) { }
   sendEmail(email: string) {
-    return this.client.get<any>(this.url + '/forgotPassword/'+ email )
+    return this.client.get<any>(this.url + '/forgottenPassword/'+ email )
   }
 }
